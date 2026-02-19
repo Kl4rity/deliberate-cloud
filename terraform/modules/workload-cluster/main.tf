@@ -59,4 +59,21 @@ module "kubernetes" {
 
   firewall_use_current_ipv4      = true
   kube_api_load_balancer_enabled = true
+
+  firewall_extra_rules = [
+    {
+      description = "Matrix RTC TCP media"
+      direction   = "in"
+      protocol    = "tcp"
+      port        = "30881"
+      source_ips  = ["0.0.0.0/0"]
+    },
+    {
+      description = "Matrix RTC UDP media"
+      direction   = "in"
+      protocol    = "udp"
+      port        = "30882"
+      source_ips  = ["0.0.0.0/0"]
+    }
+  ]
 }
