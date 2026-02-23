@@ -123,7 +123,7 @@ resource "kubernetes_manifest" "cilium_gateway" {
           "load-balancer.hetzner.cloud/location"           = "fsn1"
           "load-balancer.hetzner.cloud/name"               = "${local.gateway_identifier}-gateway"
           "load-balancer.hetzner.cloud/uses-proxyprotocol" = "true"
-          "load-balancer.hetzner.cloud/ipv6-disabled"      = "false"
+          "load-balancer.hetzner.cloud/ipv6-disabled"      = "true"
         }
       }
       listeners = flatten([
@@ -223,6 +223,7 @@ resource "helm_release" "external_dns" {
       ]
       extraArgs = [
         "--metrics-address=:7979",
+        "--managed-record-types=A,CNAME",
       ]
       serviceMonitor = {
         enabled = true

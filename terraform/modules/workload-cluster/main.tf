@@ -40,9 +40,8 @@ module "kubernetes" {
   longhorn_default_storage_class = true
   cilium_helm_values = {
     ipv6 = {
-      enabled = true
+      enabled = false
     }
-    ipv6NativeRoutingCIDR = "fd00::/64"
   }
 
   control_plane_nodepools = [
