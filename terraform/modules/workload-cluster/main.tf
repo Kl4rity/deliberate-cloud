@@ -38,6 +38,12 @@ module "kubernetes" {
   ingress_nginx_enabled          = false
   longhorn_enabled               = true
   longhorn_default_storage_class = true
+  cilium_helm_values = {
+    ipv6 = {
+      enabled = true
+    }
+    ipv6NativeRoutingCIDR = "fd00::/64"
+  }
 
   control_plane_nodepools = [
     {
