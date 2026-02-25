@@ -33,7 +33,6 @@ global:
 
   # Remove explicit appConfig to let chart auto-configure MinIO
 
-
 # Configure cert-manager issuer
 certmanager-issuer:
   email: ${letsencrypt_email}
@@ -51,15 +50,12 @@ nginx-ingress:
         cpu: 200m
         memory: 256Mi
 
-# Disable GitLab Runner (broken, not essential)
 gitlab-runner:
-  install: false
+  install: true
 
 # Disable KAS (Kubernetes Agent Server - only needed for external K8s)
 kas:
   enabled: false
-
-
 
 # Disable Prometheus (monitoring not essential)
 prometheus:

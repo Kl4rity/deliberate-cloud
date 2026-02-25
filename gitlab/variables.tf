@@ -29,7 +29,7 @@ variable "domains" {
 variable "gitlab_server_type" {
   type        = string
   description = "Hetzner server type for GitLab (minimum CX33 recommended)"
-  default     = "cpx42"
+  default     = "cx43"
 }
 
 variable "gitlab_server_location" {
@@ -41,7 +41,7 @@ variable "gitlab_server_location" {
 variable "gitlab_volume_size" {
   type        = number
   description = "Size of Hetzner volume for GitLab data in GB"
-  default     = 100
+  default     = 20
 }
 
 variable "gitlab_root_password" {
