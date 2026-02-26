@@ -38,17 +38,3 @@ variable "enable_gitlab" {
   description = "Enable GitLab CE deployment on dedicated Hetzner server"
   default     = true
 }
-
-variable "gitlab_root_password" {
-  type        = string
-  description = "Root password for GitLab. If not provided, a secure random password will be generated."
-  sensitive   = true
-  default     = null
-}
-
-variable "gitlab_server_root_password" {
-  type        = string
-  description = "Root password for GitLab server console access. If not provided, a secure random password will be generated."
-  sensitive   = true
-  default     = null
-}

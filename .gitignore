@@ -42,17 +42,17 @@ workload-cluster/kubeconfig
 workload-cluster/talosconfig
 
 # Unified terraform directory
-terraform/.terraform/
-terraform/.terraform.lock.hcl
-terraform/terraform.tfstate
-terraform/terraform.tfstate.backup
-terraform/modules/workload-cluster/.terraform/
-terraform/modules/workload-cluster/.terraform.lock.hcl
-terraform/modules/workload-cluster/terraform.tfstate
-terraform/modules/workload-cluster/terraform.tfstate.backup
-terraform/modules/workload-cluster/kubeconfig
-terraform/modules/workload-cluster/talosconfig
-terraform/modules/platform-resources/.terraform/
-terraform/modules/platform-resources/.terraform.lock.hcl
-terraform/modules/platform-resources/terraform.tfstate
-terraform/modules/platform-resources/terraform.tfstate.backup
+cloud/.terraform/
+cloud/.terraform.lock.hcl
+cloud/terraform.tfstate
+cloud/terraform.tfstate.backup
+cloud/modules/workload-cluster/.terraform/
+cloud/modules/workload-cluster/.terraform.lock.hcl
+cloud/modules/workload-cluster/terraform.tfstate
+cloud/modules/workload-cluster/terraform.tfstate.backup
+cloud/modules/workload-cluster/kubeconfig
+cloud/modules/workload-cluster/talosconfig
+cloud/modules/platform-resources/.terraform/
+cloud/modules/platform-resources/.terraform.lock.hcl
+cloud/modules/platform-resources/terraform.tfstate
+cloud/modules/platform-resources/terraform.tfstate.backup
