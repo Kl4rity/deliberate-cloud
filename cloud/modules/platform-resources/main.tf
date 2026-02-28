@@ -111,10 +111,6 @@ resource "kubernetes_manifest" "cilium_gateway" {
     metadata = {
       name      = "cilium-gateway"
       namespace = "default"
-      annotations = {
-        "external-dns.alpha.kubernetes.io/enabled" = "true"
-        "external-dns.alpha.kubernetes.io/owner"  = "default"
-      }
     }
     spec = {
       gatewayClassName = "cilium"
@@ -218,14 +214,9 @@ resource "helm_release" "external_dns" {
       policy = "sync"
       sources = [
         "gateway-httproute",
-        "service",
-        "ingress"
       ]
       extraArgs = [
-        "--metrics-address=:7979",
-        "--managed-record-types=A,CNAME,TXT",
-        "--txt-prefix=a-",
-        "--txt-owner-id=default",
+        "--metrics-address=:7979"
       ]
       serviceMonitor = {
         enabled = true
@@ -350,10 +341,6 @@ resource "kubernetes_manifest" "grafana_httproute" {
   metadata = {
     name      = "grafana"
     namespace = "monitoring"
-    annotations = {
-      "external-dns.alpha.kubernetes.io/enabled" = "true"
-      "external-dns.alpha.kubernetes.io/owner"  = "default"
-    }
   }
     spec = {
       parentRefs = [
